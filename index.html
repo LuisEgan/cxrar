@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-  <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+    <script type="text/javascript" src="scanMessage. js"></script>
+  </head>
+
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs="debugUIEnabled: false; sourceType: webcam;">
       <a-assets>
@@ -14,5 +19,7 @@
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
+
+    <div id="message">Apunta la camara a donde dice CXR <span>😎</span></div>
   </body>
 </html>
