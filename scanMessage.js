@@ -16,6 +16,7 @@ docReady(function() {
     init: function() {
       var marker = this.el;
       var message = document.getElementById("message");
+      alert("INIT")
 
       marker.setAttribute("emitevents", "true");
 
