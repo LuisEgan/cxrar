@@ -12,7 +12,7 @@ function docReady(fn) {
 }
 
 docReady(function() {
-  cancelAnimationFrame.registerComponent("registerEvents", {
+  AFRAME.registerComponent("registerEvents", {
     init: function() {
       var marker = this.el;
       var message = document.getElementById("message");
