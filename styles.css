@@ -11,5 +11,7 @@
   font-size: 2em;
   color: white;
   font-weight: bold;
-  padding: 5%;
+  padding: 15%;
+  flex-flow: column;
+  background: rgba(0, 0, 0, 0.5);
 }
