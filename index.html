@@ -5,7 +5,7 @@
     <script type="text/javascript" src="utils.js"></script>
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
-    <script type="text/javascript" src="scanMessage.js"></script>
+    <script type="text/javascript" src="index.js"></script>
   </head>
 
   <body style="margin : 0px; overflow: hidden;">
@@ -19,14 +19,24 @@
         <a-asset-item id="planet-mtl" src="planet_vr.mtl"></a-asset-item>
       </a-assets>
 
-      <a-marker
+      <a-marker preset="hiro" registerevents>
+        <a-entity
+          transform
+          obj-model="obj: #planet-obj; mtl: #planet-mtl"
+        ></a-entity>
+      </a-marker>
+
+      <!-- <a-marker
         registerevents
         preset="custom"
         type="pattern"
         url="pattern-cxrqr.patt"
       >
-        <a-entity obj-model="obj: #planet-obj; mtl: #planet-mtl"></a-entity>
-      </a-marker>
+        <a-entity
+          transform
+          obj-model="obj: #planet-obj; mtl: #planet-mtl"
+        ></a-entity>
+      </a-marker> -->
       <a-entity camera></a-entity>
     </a-scene>
 

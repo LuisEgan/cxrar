@@ -1,12 +1,5 @@
 docReady(function() {
-  AFRAME.registerComponent("log", {
-    schema: { type: "string" },
-
-    init: function() {
-      var stringToLog = this.data;
-    }
-  });
-
+  // * Show / Hide Scan message
   AFRAME.registerComponent("registerevents", {
     init: function() {
       var marker = this.el;
@@ -21,6 +14,21 @@ docReady(function() {
       marker.addEventListener("markerLost", function() {
         message.style.display = "block";
       });
+    }
+  });
+
+  // * Set the 3D Model transform
+  AFRAME.registerComponent("transform", {
+    init: function() {
+      const el = this.el;
+      console.log(el.object3D);
+
+      el.object3D.scale.set(5, 5, 5);
+
+      el.object3D.rotation.x = THREE.Math.degToRad(90);
+      el.object3D.rotation.z = THREE.Math.degToRad(180);
+
+      
     }
   });
 });
