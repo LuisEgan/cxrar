@@ -1,22 +1,17 @@
-function docReady(fn) {
-  // see if DOM is already available
-  if (
-    document.readyState === "complete" ||
-    document.readyState === "interactive"
-  ) {
-    // call on next available tick
-    setTimeout(fn, 1);
-  } else {
-    document.addEventListener("DOMContentLoaded", fn);
-  }
-}
-
 docReady(function() {
-  AFRAME.registerComponent("registerEvents", {
+  AFRAME.registerComponent("log", {
+    schema: { type: "string" },
+
+    init: function() {
+      var stringToLog = this.data;
+      console.log(stringToLog);
+    }
+  });
+
+  AFRAME.registerComponent("registerevents", {
     init: function() {
       var marker = this.el;
       var message = document.getElementById("message");
-      alert("INIT")
 
       marker.setAttribute("emitevents", "true");
 
