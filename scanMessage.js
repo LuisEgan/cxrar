@@ -4,7 +4,6 @@ docReady(function() {
 
     init: function() {
       var stringToLog = this.data;
-      console.log(stringToLog);
     }
   });
 
@@ -17,7 +16,6 @@ docReady(function() {
 
       marker.addEventListener("markerFound", function() {
         message.style.display = "none";
-        alert("found!");
       });
 
       marker.addEventListener("markerLost", function() {

@@ -19,17 +19,19 @@
         <a-asset-item id="planet-mtl" src="planet_vr.mtl"></a-asset-item>
       </a-assets>
 
-      <a-marker preset="custom" type="pattern" url="pattern-cxrqr.patt">
-        <a-entity
-          obj-model="obj: #planet-obj; mtl: #planet-mtl"
-          registerevents
-        ></a-entity>
+      <a-marker
+        registerevents
+        preset="custom"
+        type="pattern"
+        url="pattern-cxrqr.patt"
+      >
+        <a-entity obj-model="obj: #planet-obj; mtl: #planet-mtl"></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
 
     <div id="message">
-      <!-- <span>😎</span> -->
+      <span>😎</span>
       <p>
         Apunta la cámara a donde dice CXR
       </p>
