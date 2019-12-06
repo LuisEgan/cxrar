@@ -28,6 +28,10 @@
           id="planet-fire"
           src="./models/planet_fire.fbx"
         ></a-asset-item>
+        <a-asset-item
+          id="planet-ar"
+          src="./models/planet_ar.glb"
+        ></a-asset-item>
       </a-assets>
 
       <a-entity camera></a-entity>
@@ -38,25 +42,17 @@
           obj-model="obj: #planet-obj; mtl: #planet-mtl"
         ></a-entity> -->
 
-        <a-entity
-          transform
-          gltf-model="src: url(./models/planet_ar.glb);"
-          animation-mixer
-        >
-        </a-entity>
+        <a-entity transform gltf-model="#planet-ar" animation-mixer> </a-entity>
       </a-marker>
 
-      <!-- <a-marker
+      <a-marker
         registerevents
         preset="custom"
         type="pattern"
         url="pattern-cxrqr.patt"
       >
-        <a-entity
-          transform
-          obj-model="obj: #planet-obj; mtl: #planet-mtl"
-        ></a-entity>
-      </a-marker> -->
+        <a-entity transform gltf-model="#planet-ar" animation-mixer> </a-entity>
+      </a-marker>
     </a-scene>
 
     <div id="message">
