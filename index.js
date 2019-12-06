@@ -21,14 +21,15 @@ docReady(function() {
   AFRAME.registerComponent("transform", {
     init: function() {
       const el = this.el;
-      console.log(el.object3D);
+      const object = el.object3D;
+      console.log(object);
 
-      el.object3D.scale.set(5, 5, 5);
+      const scale = 10;
+      object.scale.set(scale, scale, scale);
 
-      el.object3D.rotation.x = THREE.Math.degToRad(90);
-      el.object3D.rotation.z = THREE.Math.degToRad(180);
-
-      
+      object.rotation.x = THREE.Math.degToRad(120);
+      object.rotation.z = THREE.Math.degToRad(200);
+      object.rotation.y = THREE.Math.degToRad(-110);
     }
   });
 });
