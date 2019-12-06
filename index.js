@@ -2,8 +2,8 @@ docReady(function() {
   // * Show / Hide Scan message
   AFRAME.registerComponent("registerevents", {
     init: function() {
-      var marker = this.el;
-      var message = document.getElementById("message");
+      const marker = this.el;
+      const message = document.getElementById("message");
 
       marker.setAttribute("emitevents", "true");
 
@@ -22,14 +22,13 @@ docReady(function() {
     init: function() {
       const el = this.el;
       const object = el.object3D;
-      console.log(object);
 
       const scale = 10;
       object.scale.set(scale, scale, scale);
 
       object.rotation.x = THREE.Math.degToRad(120);
       object.rotation.z = THREE.Math.degToRad(200);
-      object.rotation.y = THREE.Math.degToRad(-110);
+      object.rotation.y = THREE.Math.degToRad(-150);
     }
   });
 });
