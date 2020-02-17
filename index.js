@@ -10,7 +10,7 @@ AFRAME.registerComponent("transform", {
     const el = this.el;
     const object = el.object3D;
 
-    const scale = 5;
+    const scale = 2.5;
     object.scale.set(scale, scale, scale);
   }
 });
