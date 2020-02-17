@@ -1,34 +1,44 @@
+let eyeAnims;
+
 docReady(function() {
-  // * Show / Hide Scan message
-  AFRAME.registerComponent("registerevents", {
-    init: function() {
-      const marker = this.el;
-      const message = document.getElementById("message");
+  eyeAnims = document.getElementById("eyeanims");
+});
 
-      marker.setAttribute("emitevents", "true");
+// * Set the 3D Model transform
+AFRAME.registerComponent("transform", {
+  init: function() {
+    const el = this.el;
+    const object = el.object3D;
 
-      marker.addEventListener("markerFound", function() {
-        message.style.display = "none";
-      });
+    const scale = 5;
+    object.scale.set(scale, scale, scale);
+  }
+});
 
-      marker.addEventListener("markerLost", function() {
-        message.style.display = "block";
-      });
-    }
-  });
+// * Handle reveal and blinking eye animations
+AFRAME.registerComponent("eye", {
+  init: function() {
+    const marker = this.el;
 
-  // * Set the 3D Model transform
-  AFRAME.registerComponent("transform", {
-    init: function() {
-      const el = this.el;
-      const object = el.object3D;
+    marker.addEventListener("markerFound", () => {
+      eyeAnims.setAttribute(
+        "animation-mixer",
+        "clip: eyeReveal; duration: 5; loop: once"
+      );
+    });
 
-      const scale = 10;
-      object.scale.set(scale, scale, scale);
+    marker.addEventListener("markerLost", () => {});
+  }
+});
+AFRAME.registerComponent("eyeanims", {
+  init: function() {
+    const el = this.el;
 
-      object.rotation.x = THREE.Math.degToRad(120);
-      object.rotation.z = THREE.Math.degToRad(200);
-      object.rotation.y = THREE.Math.degToRad(-150);
-    }
-  });
+    el.addEventListener("animation-finished", () => {
+      eyeAnims.setAttribute(
+        "animation-mixer",
+        "clip: eyeBlinking; loop: repeat"
+      );
+    });
+  }
 });
